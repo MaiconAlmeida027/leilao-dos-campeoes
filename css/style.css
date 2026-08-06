@@ -1,0 +1,179 @@
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #1b1b1b;
+
+    margin: 0;
+
+    padding: 20px;
+
+}
+
+
+
+
+/* =====================================
+   CONTAINER PRINCIPAL
+===================================== */
+
+
+.container {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+}
+
+
+
+
+h1 {
+
+    text-align: center;
+
+}
+
+
+
+h2 {
+
+    margin-top: 20px;
+
+}
+
+
+
+
+hr {
+
+    margin: 20px 0;
+
+}
+
+
+
+
+
+
+/* =====================================
+   CAMPOS
+===================================== */
+
+
+input,
+select {
+
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 5px;
+
+    font-size: 16px;
+
+
+}
+
+
+
+label {
+
+    display: inline-block;
+
+    margin-right: 20px;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+
+button {
+
+
+    width: 100%;
+
+    padding: 12px;
+
+
+    font-size: 18px;
+
+
+    cursor: pointer;
+
+
+    margin-top: 10px;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   TELA DO LEILÃO
+===================================== */
+
+
+#telaLeilao {
+
+
+    display: none;
+
+
+}
+
+
+
+
+
+/* =====================================
+   ÁREA DO ATLETA
+===================================== */
+
+
+#atletaAtual {
+
+
+    border: 2px solid black;
+
+    padding: 15px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+
+}

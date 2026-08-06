@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leilão dos Campeões</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<main class="container">
+
+
+
+<!-- =====================================
+     TELA INICIAL
+===================================== -->
+
+
+<section id="telaInicial">
+
+
+    <h1>
+        🏆 LEILÃO DOS CAMPEÕES
+    </h1>
+
+
+    <hr>
+
+
+
+    <h2>
+        Campeonato
+    </h2>
+
+
+
+    <select id="campeonato">
+
+
+        <option>
+            Brasileirão
+        </option>
+
+
+    </select>
+
+
+
+
+
+    <h2>
+        Quantidade de jogadores
+    </h2>
+
+
+
+    <label>
+
+        <input 
+        type="radio"
+        name="jogadores"
+        id="doisJogadores">
+
+        2 jogadores
+
+    </label>
+
+
+
+    <br>
+
+
+
+    <label>
+
+        <input 
+        type="radio"
+        name="jogadores"
+        id="tresJogadores">
+
+        3 jogadores
+
+    </label>
+
+
+
+
+
+
+
+    <h2>
+        Nome Jogador 1
+    </h2>
+
+
+    <input 
+    type="text"
+    id="nomeJogador1">
+
+
+
+
+
+    <h2>
+        Nome Jogador 2
+    </h2>
+
+
+    <input 
+    type="text"
+    id="nomeJogador2">
+
+
+
+
+
+
+    <div id="jogador3">
+
+
+        <h2>
+            Nome Jogador 3
+        </h2>
+
+
+        <input 
+        type="text"
+        id="nomeJogador3">
+
+
+    </div>
+
+
+
+
+
+    <br><br>
+
+
+
+    <button id="iniciarJogo">
+
+        INICIAR JOGO
+
+    </button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =====================================
+     TELA DO LEILÃO
+===================================== -->
+
+
+<section id="telaLeilao" style="display:none;">
+
+
+
+<h1>
+    ⚽ LEILÃO
+</h1>
+
+
+<hr>
+
+
+
+
+
+<!-- =====================================
+     PAINEL DOS JOGADORES
+===================================== -->
+
+
+<section id="painelJogadores">
+
+
+    <h2>
+        👥 Jogadores
+    </h2>
+
+
+
+    <div id="listaJogadores">
+
+
+        <!-- JavaScript vai preencher -->
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- =====================================
+     ATLETA ATUAL
+===================================== -->
+
+
+<h2>
+    Atleta Atual
+</h2>
+
+
+
+<div id="atletaAtual">
+
+
+
+    <h3 id="nomeAtleta">
+
+        Nome do atleta
+
+    </h3>
+
+
+
+
+    <p>
+
+        Posição:
+
+        <span id="posicaoAtleta">
+            -
+        </span>
+
+    </p>
+
+
+
+
+
+    <p>
+
+        Nota:
+
+        <span id="notaAtleta">
+            -
+        </span>
+
+    </p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- =====================================
+     RESULTADO DO LEILÃO
+===================================== -->
+
+
+<h2>
+    Resultado do Leilão
+</h2>
+
+
+
+
+
+<button id="ninguem">
+
+    NINGUÉM QUER
+
+</button>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+    Ou comprar:
+</h3>
+
+
+
+
+
+<label>
+
+Nome:
+
+</label>
+
+
+<br>
+
+
+<input 
+type="text"
+id="nomeComprador">
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+<label>
+
+Valor:
+
+</label>
+
+
+
+<br>
+
+
+
+<input 
+type="number"
+id="valorCompra">
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+<button id="confirmarCompra">
+
+    CONFIRMAR
+
+</button>
+
+
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<script src="js/atletas.js"></script>
+
+<script src="js/script.js"></script>
+
+
+
+</body>
+
+
+</html>
