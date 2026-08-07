@@ -1,7 +1,15 @@
 // =====================================
-// PARTE 1
-// Controle jogadores
+// LEILÃO DOS CAMPEÕES
+// SCRIPT PRINCIPAL
 // =====================================
+
+
+
+// =====================================
+// PARTE 1
+// Controle quantidade jogadores
+// =====================================
+
 
 const doisJogadores = document.getElementById("doisJogadores");
 
@@ -10,11 +18,13 @@ const tresJogadores = document.getElementById("tresJogadores");
 const jogador3 = document.getElementById("jogador3");
 
 
+
 doisJogadores.addEventListener("click", function(){
 
     jogador3.style.display = "none";
 
 });
+
 
 
 tresJogadores.addEventListener("click", function(){
@@ -26,9 +36,10 @@ tresJogadores.addEventListener("click", function(){
 
 
 
+
 // =====================================
 // PARTE 2
-// Controle telas
+// Controle das telas
 // =====================================
 
 
@@ -36,8 +47,9 @@ const telaInicial = document.getElementById("telaInicial");
 
 const telaLeilao = document.getElementById("telaLeilao");
 
-const telaResultado =
-document.getElementById("telaResultado");
+const telaResultado = document.getElementById("telaResultado");
+
+
 
 
 
@@ -56,6 +68,7 @@ let atletasDisponiveis = [];
 
 
 
+
 // =====================================
 // PARTE 4
 // Criar jogador
@@ -68,7 +81,7 @@ function criarJogador(nome){
     return {
 
 
-        nome: nome.trim(),
+        nome:nome.trim(),
 
 
         saldo:20,
@@ -102,131 +115,139 @@ function criarJogador(nome){
 
 
 
+
 // =====================================
 // PARTE 5
-// Iniciar jogo
+// Iniciar campeonato
 // =====================================
 
 
-const botao = document.getElementById("iniciarJogo");
 
+const botaoIniciar = document.getElementById("iniciarJogo");
 
 
-botao.addEventListener("click", function(){
 
+botaoIniciar.addEventListener("click", function(){
 
 
-const nomeJogador1 = document
-.getElementById("nomeJogador1")
-.value
-.trim();
 
+    const nome1 =
+    document.getElementById("nomeJogador1")
+    .value
+    .trim();
 
 
-const nomeJogador2 = document
-.getElementById("nomeJogador2")
-.value
-.trim();
 
+    const nome2 =
+    document.getElementById("nomeJogador2")
+    .value
+    .trim();
 
 
-const nomeJogador3 = document
-.getElementById("nomeJogador3")
-.value
-.trim();
 
+    const nome3 =
+    document.getElementById("nomeJogador3")
+    .value
+    .trim();
 
 
 
-// =====================================
-// VALIDAÇÃO DOS NOMES
-// =====================================
 
 
-if(nomeJogador1 === ""){
+    // ===============================
+    // Validação nomes
+    // ===============================
 
 
-    alert("Digite o nome do Jogador 1");
 
+    if(nome1 === ""){
 
-    return;
 
+        alert("Digite o nome do Jogador 1");
 
-}
+        return;
 
 
+    }
 
-if(nomeJogador2 === ""){
 
 
-    alert("Digite o nome do Jogador 2");
+    if(nome2 === ""){
 
 
-    return;
+        alert("Digite o nome do Jogador 2");
 
+        return;
 
-}
 
+    }
 
 
-if(tresJogadores.checked && nomeJogador3 === ""){
 
 
-    alert("Digite o nome do Jogador 3");
 
+    if(tresJogadores.checked && nome3 === ""){
 
-    return;
 
+        alert("Digite o nome do Jogador 3");
 
-}
+        return;
 
-// =====================================
-// Não permitir nomes iguais
-// =====================================
 
+    }
 
-if(nomeJogador1.toLowerCase() === nomeJogador2.toLowerCase()){
 
 
-    alert("Os jogadores precisam ter nomes diferentes");
 
 
-    return;
+    // ===============================
+    // Não permite nomes iguais
+    // ===============================
 
 
-}
 
+    let nomes = [
 
+        nome1.toLowerCase(),
 
-if(
-tresJogadores.checked && 
-nomeJogador1.toLowerCase() === nomeJogador3.toLowerCase()
-){
+        nome2.toLowerCase()
 
+    ];
 
-    alert("Os jogadores precisam ter nomes diferentes");
 
 
-    return;
+    if(tresJogadores.checked){
 
 
-}
+        nomes.push(nome3.toLowerCase());
 
 
+    }
 
-if(
-tresJogadores.checked && 
-nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
-){
 
 
-    alert("Os jogadores precisam ter nomes diferentes");
+    let nomesUnicos = new Set(nomes);
 
 
-    return;
 
+    if(nomesUnicos.size !== nomes.length){
 
-}
+
+        alert("Os jogadores precisam ter nomes diferentes");
+
+        return;
+
+
+    }
+
+
+
+
+
+    // ===============================
+    // Criando jogadores
+    // ===============================
+
 
 
     jogadores = [];
@@ -234,13 +255,17 @@ nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
 
 
     jogadores.push(
-        criarJogador(nomeJogador1)
+
+        criarJogador(nome1)
+
     );
 
 
 
     jogadores.push(
-        criarJogador(nomeJogador2)
+
+        criarJogador(nome2)
+
     );
 
 
@@ -250,7 +275,9 @@ nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
 
 
         jogadores.push(
-            criarJogador(nomeJogador3)
+
+            criarJogador(nome3)
+
         );
 
 
@@ -260,7 +287,13 @@ nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
 
 
 
+
+
+    // Copia elenco
+
+
     atletasDisponiveis = [...atletas];
+
 
 
 
@@ -272,10 +305,12 @@ nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
 
 
 
-    telaInicial.style.display="none";
+
+    telaInicial.style.display = "none";
 
 
-    telaLeilao.style.display="block";
+    telaLeilao.style.display = "block";
+
 
 
 
@@ -287,13 +322,8 @@ nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
 
 
 
+
 });
-
-
-
-
-
-
 
 // =====================================
 // PARTE 6
@@ -302,7 +332,6 @@ nomeJogador2.toLowerCase() === nomeJogador3.toLowerCase()
 
 
 function sortearAtleta(){
-
 
 
     if(atletasDisponiveis.length === 0){
@@ -332,8 +361,11 @@ function sortearAtleta(){
 
 
     console.log(
+
         "Atleta sorteado:",
+
         atletaAtual
+
     );
 
 
@@ -356,10 +388,17 @@ function sortearAtleta(){
 
 
 }
+
+
+
+
+
+
 // =====================================
 // PARTE 7
 // Comprar atleta
 // =====================================
+
 
 
 const confirmarCompra =
@@ -371,9 +410,8 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    const nome =
-    document
-    .getElementById("nomeComprador")
+    const nome = 
+    document.getElementById("nomeComprador")
     .value
     .trim()
     .toLowerCase();
@@ -381,17 +419,18 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    const valor =
-    Number(
-        document.getElementById("valorCompra").value
+    const valor = Number(
+
+        document.getElementById("valorCompra")
+        .value
+
     );
 
 
 
 
 
-    const jogador =
-    jogadores.find(function(j){
+    const jogador = jogadores.find(function(j){
 
 
         return j.nome.toLowerCase() === nome;
@@ -417,7 +456,8 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    if(valor <=0){
+
+    if(valor <= 0){
 
 
         alert("Digite um valor válido");
@@ -426,6 +466,7 @@ confirmarCompra.addEventListener("click", function(){
 
 
     }
+
 
 
 
@@ -445,18 +486,17 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-
-    const posicao =
-    atletaAtual.posicao.toLowerCase();
+    const posicao = atletaAtual.posicao.toLowerCase();
 
 
 
 
 
 
-    // ==============================
-    // Verifica limite de posição
-    // ==============================
+    // ===============================
+    // Verificar posição
+    // ===============================
+
 
 
     if(posicao === "meia"){
@@ -478,12 +518,15 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    }else{
+    }
+
+
+
+    else{
 
 
 
         if(jogador.time[posicao] !== null){
-
 
 
             alert(
@@ -505,9 +548,10 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    // ==============================
-    // Desconta moedas
-    // ==============================
+    // ===============================
+    // Compra
+    // ===============================
+
 
 
     jogador.saldo -= valor;
@@ -516,19 +560,15 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-
-    // ==============================
-    // Adiciona atleta
-    // ==============================
-
-
     if(posicao === "meia"){
 
 
         jogador.time.meias.push(atletaAtual);
 
 
-    }else{
+    }
+
+    else{
 
 
         jogador.time[posicao] = atletaAtual;
@@ -542,14 +582,14 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    // Remove atleta disponível
 
-
-    atletasDisponiveis =
+    atletasDisponiveis = 
     atletasDisponiveis.filter(function(atleta){
 
 
+
         return atleta !== atletaAtual;
+
 
 
     });
@@ -559,7 +599,8 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
-    console.log("Compra realizada!");
+
+    console.log("Compra realizada");
 
     console.log(jogador);
 
@@ -574,22 +615,28 @@ confirmarCompra.addEventListener("click", function(){
 
 
 
+    document.getElementById("nomeComprador").value = "";
 
-    document.getElementById("nomeComprador").value="";
-
-
-    document.getElementById("valorCompra").value="";
+    document.getElementById("valorCompra").value = "";
 
 
 
 
 
+    if(verificarFimDeJogo()){
 
-    verificarFimDeJogo();
+
+        return;
+
+
+    }
+
+
 
 
 
     sortearAtleta();
+
 
 
 
@@ -609,8 +656,10 @@ confirmarCompra.addEventListener("click", function(){
 // =====================================
 
 
+
 const botaoNinguem =
 document.getElementById("ninguem");
+
 
 
 
@@ -629,6 +678,8 @@ botaoNinguem.addEventListener("click", function(){
 
 
 
+
+
     sortearAtleta();
 
 
@@ -642,181 +693,179 @@ botaoNinguem.addEventListener("click", function(){
 
 
 
-
-/// =====================================
-// PARTE 9
-// Atualizar painel dos jogadores
 // =====================================
+// PARTE 9
+// Atualizar painel jogadores
+// =====================================
+
+
 
 function atualizarPainelJogadores(){
 
 
-const lista = document.getElementById("listaJogadores");
 
+    const lista =
+    document.getElementById("listaJogadores");
 
-lista.innerHTML = "";
 
 
+    lista.innerHTML = "";
 
 
-jogadores.forEach(function(jogador){
 
 
 
-const div = document.createElement("div");
 
+    jogadores.forEach(function(jogador){
 
-div.className = "cardTime";
 
 
+        const div =
+        document.createElement("div");
 
 
-div.innerHTML = `
 
+        div.className = "cardTime";
 
 
-<h2>
-🏟️ ${jogador.nome} FC
-</h2>
 
 
 
-<h3>
-💰 ${jogador.saldo} moedas
-</h3>
 
 
+        div.innerHTML = `
 
-<hr>
 
 
+        <h3>
+        👤 ${jogador.nome}
+        </h3>
 
 
-<h4>
-🧤 GOLEIRO
-</h4>
+        <p>
+        💰 Moedas:
+        ${jogador.saldo}
+        </p>
 
-<p>
 
-${
-jogador.time.goleiros.length > 0
 
-?
 
-`${jogador.time.goleiros[0].nome}
-⭐ ${jogador.time.goleiros[0].nota}`
+        <p>
+        🧤 Goleiro:
 
-:
+        ${
+            jogador.time.goleiro
 
-"Vazio"
+            ?
 
-}
+            jogador.time.goleiro.nome
 
-</p>
+            :
 
+            "Vazio"
 
+        }
 
+        </p>
 
-<h4>
-🛡️ ZAGUEIRO
-</h4>
 
-<p>
 
-${
-jogador.time.zagueiros.length > 0
 
-?
+        <p>
+        🛡️ Zagueiro:
 
-`${jogador.time.zagueiros[0].nome}
-⭐ ${jogador.time.zagueiros[0].nota}`
+        ${
+            jogador.time.zagueiro
 
-:
+            ?
 
-"Vazio"
+            jogador.time.zagueiro.nome
 
-}
+            :
 
-</p>
+            "Vazio"
 
+        }
 
+        </p>
 
 
 
-<h4>
-🎯 MEIAS
-</h4>
 
 
-<p>
+        <p>
+        🎯 Meias:
 
-${
-jogador.time.meias.length > 0
+        ${
+            jogador.time.meias.length > 0
 
-?
+            ?
 
-jogador.time.meias.map(function(meia){
+            jogador.time.meias
+            .map(function(meia){
 
-return `${meia.nome} ⭐${meia.nota}`;
+                return meia.nome;
 
+            })
+            .join(" - ")
 
-}).join("<br>")
+            :
 
-:
+            "Vazio"
 
-"Vazio"
+        }
 
-}
 
+        </p>
 
-</p>
 
 
 
 
+        <p>
+        ⚽ Atacante:
 
-<h4>
-⚽ ATACANTE
-</h4>
+        ${
+            jogador.time.atacante
 
+            ?
 
-<p>
+            jogador.time.atacante.nome
 
-${
-jogador.time.atacantes.length > 0
+            :
 
-?
+            "Vazio"
 
-`${jogador.time.atacantes[0].nome}
-⭐ ${jogador.time.atacantes[0].nota}`
+        }
 
-:
+        </p>
 
-"Vazio"
 
-}
 
 
-</p>
 
+        `;
 
 
 
-`;
 
 
 
-lista.appendChild(div);
+        lista.appendChild(div);
 
 
 
-});
+
+
+    });
+
+
 
 
 }
 // =====================================
 // PARTE 10
-// Verificar fim de jogo
+// Verificar fim do campeonato
 // =====================================
 
 
@@ -830,13 +879,13 @@ function verificarFimDeJogo(){
 
         return (
 
-            jogador.time.goleiro &&
+            jogador.time.goleiro !== null &&
 
-            jogador.time.zagueiro &&
+            jogador.time.zagueiro !== null &&
 
-            jogador.time.meias.length >=2 &&
+            jogador.time.meias.length >= 2 &&
 
-            jogador.time.atacante
+            jogador.time.atacante !== null
 
 
         );
@@ -855,11 +904,22 @@ function verificarFimDeJogo(){
         finalizarJogo();
 
 
+        return true;
+
+
     }
 
 
 
+
+
+    return false;
+
+
+
 }
+
+
 
 
 
@@ -873,13 +933,15 @@ function verificarFimDeJogo(){
 // =====================================
 
 
+
 function finalizarJogo(){
 
 
-    telaLeilao.style.display="none";
+
+    telaLeilao.style.display = "none";
 
 
-    telaResultado.style.display="block";
+    telaResultado.style.display = "block";
 
 
 
@@ -889,145 +951,61 @@ function finalizarJogo(){
 
 }
 
+
+
+
+
+
+
+
+
 // =====================================
-// Mostrar resultado final
+// PARTE 12
+// Calcular pontuação
 // =====================================
 
-function mostrarResultado(){
 
 
-const ranking = document.getElementById("rankingFinal");
+function calcularPontuacao(jogador){
 
 
-ranking.innerHTML = "";
 
+    let pontos = 0;
 
 
-let resultados = [];
 
 
 
+    pontos += jogador.time.goleiro.nota;
 
-jogadores.forEach(function(jogador){
 
 
+    pontos += jogador.time.zagueiro.nota;
 
-let pontos = calcularPontuacao(jogador);
 
 
 
-resultados.push({
 
+    jogador.time.meias.forEach(function(meia){
 
-nome:jogador.nome,
 
+        pontos += meia.nota;
 
-pontos:pontos,
 
+    });
 
-time:jogador
 
 
 
-});
 
+    pontos += jogador.time.atacante.nota;
 
 
-});
 
 
 
 
-
-// ordenar maior pontuação
-
-resultados.sort(function(a,b){
-
-
-return b.pontos - a.pontos;
-
-
-});
-
-
-
-
-
-resultados.forEach(function(resultado,index){
-
-
-
-const div = document.createElement("div");
-
-
-div.className="cardRanking";
-
-
-
-div.innerHTML = `
-
-
-<h2>
-
-${index + 1}º 🏟️ ${resultado.nome} FC
-
-</h2>
-
-
-<p>
-
-⭐ Pontuação:
-${resultado.pontos}
-
-</p>
-
-
-`;
-
-
-
-ranking.appendChild(div);
-
-
-
-});
-
-
-
-
-
-// campeão
-
-const campeao = resultados[0];
-
-
-
-document.getElementById("campeaoFinal").innerHTML = `
-
-
-<h1>
-
-🏆 CAMPEÃO
-
-</h1>
-
-
-<h2>
-
-${campeao.nome} FC
-
-</h2>
-
-
-<h3>
-
-⭐ ${campeao.pontos} pontos
-
-</h3>
-
-
-
-`;
+    return pontos;
 
 
 
@@ -1036,7 +1014,73 @@ ${campeao.nome} FC
 
 
 
-    // Ordena do maior para menor
+
+
+
+
+
+// =====================================
+// PARTE 13
+// Mostrar resultado
+// =====================================
+
+
+
+function mostrarResultado(){
+
+
+
+    const rankingFinal = 
+    document.getElementById("rankingFinal");
+
+
+
+    rankingFinal.innerHTML = "";
+
+
+
+
+
+
+    let ranking = [];
+
+
+
+
+
+
+
+    jogadores.forEach(function(jogador){
+
+
+
+        ranking.push({
+
+
+            nome:jogador.nome,
+
+
+            pontos:calcularPontuacao(jogador),
+
+
+            jogador:jogador
+
+
+
+        });
+
+
+
+
+    });
+
+
+
+
+
+
+    // ordenar maior pontuação
+
 
     ranking.sort(function(a,b){
 
@@ -1050,11 +1094,10 @@ ${campeao.nome} FC
 
 
 
+
+
+
     ranking.forEach(function(item,index){
-
-
-
-        const jogador = item.jogador;
 
 
 
@@ -1063,32 +1106,52 @@ ${campeao.nome} FC
 
 
 
-        div.classList.add("cardResultado");
+        div.className="cardResultado";
 
 
 
 
-        let posicao = "";
+
+
+        let colocacao = "";
 
 
 
         if(index === 0){
 
-            posicao = "🥇 CAMPEÃO";
+
+            colocacao = "🥇 CAMPEÃO";
+
 
         }
+
 
         else if(index === 1){
 
-            posicao = "🥈 VICE CAMPEÃO";
+
+            colocacao = "🥈 VICE CAMPEÃO";
+
 
         }
+
 
         else if(index === 2){
 
-            posicao = "🥉 TERCEIRO LUGAR";
+
+            colocacao = "🥉 TERCEIRO LUGAR";
+
 
         }
+
+
+
+
+
+
+
+        const jogador = item.jogador;
+
+
 
 
 
@@ -1097,17 +1160,21 @@ ${campeao.nome} FC
 
 
 
+
         <h2>
 
-        ${posicao}
+        ${colocacao}
 
         </h2>
+
 
 
 
         <h3>
 
         👤 ${jogador.nome}
+
+        FC
 
         </h3>
 
@@ -1169,7 +1236,6 @@ ${campeao.nome} FC
 
 
 
-
         <p>
 
         🎯 Meias:
@@ -1197,12 +1263,18 @@ ${campeao.nome} FC
 
 
 
+
+
         `;
 
 
 
 
-        area.appendChild(div);
+
+        rankingFinal.appendChild(div);
+
+
+
 
 
 
@@ -1212,52 +1284,11 @@ ${campeao.nome} FC
 
 
 
+
     mostrarCampeao(ranking);
 
 
 
-}
-
-
-
-
-
-
-
-
-
-// =====================================
-// Calcular pontuação do time
-// =====================================
-
-function calcularPontuacao(jogador){
-
-
-let pontos = 0;
-
-
-
-pontos += jogador.time.goleiros[0].nota;
-
-
-pontos += jogador.time.zagueiros[0].nota;
-
-
-jogador.time.meias.forEach(function(meia){
-
-
-pontos += meia.nota;
-
-
-});
-
-
-pontos += jogador.time.atacantes[0].nota;
-
-
-
-return pontos;
-
 
 }
 
@@ -1268,78 +1299,71 @@ return pontos;
 
 
 
+
 // =====================================
+// PARTE 14
 // Mostrar campeão
 // =====================================
+
 
 
 function mostrarCampeao(ranking){
 
 
 
-    const campeao =
-    ranking[0];
+    const campeao = ranking[0];
 
 
 
-    document.getElementById("campeaoFinal").innerHTML = `
+
+
+    const area =
+    document.getElementById("campeaoFinal");
+
+
+
+
+
+
+    area.innerHTML = `
 
 
 
     <div class="campeao">
 
 
+        <h1>
 
-    <h1>
+        🏆 CAMPEÃO DO LEILÃO
 
-    🏆 CAMPEÃO DO LEILÃO
-
-    </h1>
-
-
-
-    <h2>
-
-    ${campeao.jogador.nome}
-
-    </h2>
+        </h1>
 
 
 
+        <h2>
 
-    <p>
+        ${campeao.nome} FC
 
-    ⭐ Pontuação:
+        </h2>
 
-    ${campeao.pontos}
 
-    pontos
 
-    </p>
 
+        <h3>
+
+        ⭐ ${campeao.pontos}
+
+        pontos
+
+        </h3>
 
 
 
     </div>
 
 
-
     `;
 
-
-
-}
-
-function finalizarJogo(){
-
-
-telaLeilao.style.display="none";
-
-
-telaResultado.style.display="block";
-
-
-mostrarResultado();
 
 
 }
