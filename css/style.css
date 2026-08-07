@@ -177,3 +177,31 @@ button {
 
 
 }
+
+.status-projeto {
+
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+
+    background-color: #f4f4f4;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    font-family: Arial, sans-serif;
+
+}
+
+.status-projeto h2 {
+
+    text-align: center;
+
+}
+
+.status-projeto li {
+
+    margin: 8px 0;
+
+}
