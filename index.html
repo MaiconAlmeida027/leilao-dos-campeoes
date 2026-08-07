@@ -1,176 +1,216 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 
 <head>
 
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Leilão dos Campeões</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Leilão dos Campeões
+</title>
+
+
+
+<link rel="stylesheet" href="css/style.css">
+
 
 </head>
+
 
 
 <body>
 
 
-<main class="container">
+
+<div class="container">
 
 
 
-<!-- =====================================
-     TELA INICIAL
-===================================== -->
+<!-- ==================================================
+TELA INICIAL
+================================================== -->
 
 
 <section id="telaInicial">
 
 
-    <h1>
-        🏆 LEILÃO DOS CAMPEÕES
-    </h1>
-<div class="status-projeto">
 
-    <h2>Status do Projeto</h2>
+<h1>
+🏆 LEILÃO DOS CAMPEÕES
+</h1>
 
-    <p>🟢 Desenvolvimento ativo</p>
 
-    <p>Versão atual: MVP 0.1</p>
+<p>
+Monte seu time dos sonhos através de um campeonato de cartas de jogadores.
+</p>
 
-    <h3>Funcionalidades</h3>
 
-    <ul>
-        <li>✅ Cadastro de jogadores</li>
-        <li>✅ Sistema de moedas</li>
-        <li>⬜ Sorteio de atletas</li>
-        <li>⬜ Sistema de lances</li>
-        <li>⬜ Formação dos times</li>
-    </ul>
+
+<hr>
+
+
+
+
+
+<h2>
+🏟️ Campeonato
+</h2>
+
+
+<select id="campeonato">
+
+
+<option value="Brasileirão">
+
+Brasileirão
+
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+
+<h2>
+👥 Quantidade de jogadores
+</h2>
+
+
+
+
+<label>
+
+
+<input
+
+type="radio"
+
+name="jogadores"
+
+id="doisJogadores"
+
+checked>
+
+
+2 jogadores
+
+
+</label>
+
+
+
+<br>
+
+
+
+<label>
+
+
+<input
+
+type="radio"
+
+name="jogadores"
+
+id="tresJogadores">
+
+
+3 jogadores
+
+
+</label>
+
+
+
+
+
+
+
+<h2>
+Jogador 1
+</h2>
+
+
+<input
+
+type="text"
+
+id="nomeJogador1"
+
+placeholder="Digite o nome">
+
+
+
+
+
+
+
+<h2>
+Jogador 2
+</h2>
+
+
+<input
+
+type="text"
+
+id="nomeJogador2"
+
+placeholder="Digite o nome">
+
+
+
+
+
+
+
+<div id="jogador3">
+
+
+
+<h2>
+Jogador 3
+</h2>
+
+
+<input
+
+type="text"
+
+id="nomeJogador3"
+
+placeholder="Digite o nome">
+
 
 </div>
 
-    <hr>
 
 
 
-    <h2>
-        Campeonato
-    </h2>
 
 
 
-    <select id="campeonato">
+<br><br>
 
 
-        <option>
-            Brasileirão
-        </option>
 
+<button id="iniciarJogo">
 
-    </select>
+🚀 INICIAR CAMPEONATO
 
-
-
-
-
-    <h2>
-        Quantidade de jogadores
-    </h2>
-
-
-
-    <label>
-
-        <input 
-        type="radio"
-        name="jogadores"
-        id="doisJogadores">
-
-        2 jogadores
-
-    </label>
-
-
-
-    <br>
-
-
-
-    <label>
-
-        <input 
-        type="radio"
-        name="jogadores"
-        id="tresJogadores">
-
-        3 jogadores
-
-    </label>
-
-
-
-
-
-
-
-    <h2>
-        Nome Jogador 1
-    </h2>
-
-
-    <input 
-    type="text"
-    id="nomeJogador1">
-
-
-
-
-
-    <h2>
-        Nome Jogador 2
-    </h2>
-
-
-    <input 
-    type="text"
-    id="nomeJogador2">
-
-
-
-
-
-
-    <div id="jogador3">
-
-
-        <h2>
-            Nome Jogador 3
-        </h2>
-
-
-        <input 
-        type="text"
-        id="nomeJogador3">
-
-
-    </div>
-
-
-
-
-
-    <br><br>
-
-
-
-    <button id="iniciarJogo">
-
-        INICIAR JOGO
-
-    </button>
+</button>
 
 
 
@@ -184,72 +224,50 @@
 
 
 
-<!-- =====================================
-     TELA DO LEILÃO
-===================================== -->
+<!-- ==================================================
+TELA DO CAMPEONATO
+================================================== -->
 
 
-<section id="telaLeilao" style="display:none;">
+<section id="telaLeilao">
 
 
 
 <h1>
-    ⚽ LEILÃO
+⚽ CAMPEONATO EM ANDAMENTO
 </h1>
 
 
-<hr>
-
-
-
-
-
-<!-- =====================================
-     PAINEL DOS JOGADORES
-===================================== -->
-
-
-<section id="painelJogadores">
-
-
-    <h2>
-        👥 Jogadores
-    </h2>
-
-
-
-    <div id="listaJogadores">
-
-
-        <!-- JavaScript vai preencher -->
-
-
-    </div>
-
-
-
-</section>
-
-
-
-
-
-
-
 
 <hr>
 
 
-
-
-
-<!-- =====================================
-     ATLETA ATUAL
-===================================== -->
 
 
 <h2>
-    Atleta Atual
+👥 Times
+</h2>
+
+
+
+<div id="listaJogadores">
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h2>
+🔥 Jogador disponível
 </h2>
 
 
@@ -258,38 +276,54 @@
 
 
 
-    <h3 id="nomeAtleta">
-
-        Nome do atleta
-
-    </h3>
 
 
+<h3 id="nomeAtleta">
 
+Nome do atleta
 
-    <p>
-
-        Posição:
-
-        <span id="posicaoAtleta">
-            -
-        </span>
-
-    </p>
+</h3>
 
 
 
 
+<p>
 
-    <p>
+Posição:
 
-        Nota:
+<strong>
 
-        <span id="notaAtleta">
-            -
-        </span>
+<span id="posicaoAtleta">
 
-    </p>
+-
+
+</span>
+
+</strong>
+
+
+</p>
+
+
+
+
+
+<p>
+
+Nota:
+
+<strong>
+
+<span id="notaAtleta">
+
+-
+
+</span>
+
+</strong>
+
+
+</p>
 
 
 
@@ -302,23 +336,75 @@
 
 
 
-
-<!-- =====================================
-     RESULTADO DO LEILÃO
-===================================== -->
-
-
-<h2>
-    Resultado do Leilão
-</h2>
+<hr>
 
 
 
 
 
-<button id="ninguem">
 
-    NINGUÉM QUER
+<h3>
+📝 Registrar compra
+</h3>
+
+
+
+<label>
+
+Quem comprou?
+
+</label>
+
+
+
+<input
+
+type="text"
+
+id="nomeComprador"
+
+placeholder="Nome do jogador">
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+<label>
+
+Valor pago:
+
+</label>
+
+
+
+<input
+
+type="number"
+
+id="valorCompra"
+
+placeholder="Quantidade de moedas">
+
+
+
+
+
+<br><br>
+
+
+
+
+<button id="confirmarCompra">
+
+✅ CONFIRMAR COMPRA
 
 </button>
 
@@ -326,69 +412,9 @@
 
 
 
-<hr>
+<button id="ninguem">
 
-
-
-
-
-<h3>
-    Ou comprar:
-</h3>
-
-
-
-
-
-<label>
-
-Nome:
-
-</label>
-
-
-<br>
-
-
-<input 
-type="text"
-id="nomeComprador">
-
-
-<br><br>
-
-
-<label>
-
-Valor:
-
-</label>
-
-
-
-<br>
-
-
-
-<input 
-type="number"
-id="valorCompra">
-
-
-
-
-
-
-<br><br>
-
-
-
-
-
-
-<button id="confirmarCompra">
-
-    CONFIRMAR
+❌ NINGUÉM QUER
 
 </button>
 
@@ -402,7 +428,77 @@ id="valorCompra">
 
 
 
-</main>
+
+
+
+
+
+
+
+<!-- ==================================================
+TELA FINAL
+================================================== -->
+
+
+<section id="telaResultado">
+
+
+
+<h1>
+
+🏆 RESULTADO FINAL
+
+</h1>
+
+
+
+
+
+
+<div id="rankingFinal">
+
+
+</div>
+
+
+
+
+
+
+
+<div id="campeaoFinal">
+
+
+</div>
+
+
+
+
+
+
+
+<button id="novoCampeonato">
+
+🔄 NOVO CAMPEONATO
+
+</button>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</div>
+
+
 
 
 
@@ -417,6 +513,7 @@ id="valorCompra">
 
 
 </body>
+
 
 
 </html>
