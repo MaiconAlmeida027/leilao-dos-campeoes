@@ -27,8 +27,7 @@ O Leilão dos Campeões permite que 2 ou 3 jogadores disputem atletas através d
 
 ## 🌐 Projeto online
 
-Acesse:
-(seu link do GitHub Pages)
+Acesse: https://maiconalmeida027.github.io/leilao-dos-campeoes/
 
 ## 📌 Próximos passos
 
