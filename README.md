@@ -1,28 +1,42 @@
 ﻿
 # ⚽ Leilão dos Campeões
 
-Jogo de leilão de jogadores de futebol desenvolvido em JavaScript.
+Projeto de um jogo de leilão de jogadores de futebol desenvolvido para praticar lógica de programação, manipulação do DOM e desenvolvimento web.
 
-## 🎯 Objetivo
+## 🎯 Sobre o projeto
 
-Permitir que 2 ou 3 jogadores disputem atletas em um sistema de leilão,
-montando seus times ao final da partida.
+O Leilão dos Campeões permite que 2 ou 3 jogadores disputem atletas através de um sistema de leilão, utilizando moedas para montar seus times.
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
+- Git
+- GitHub
 
-## 📌 Funcionalidades
+## 🕹️ Funcionalidades atuais
 
-- Escolha do campeonato
-- Cadastro de jogadores
-- Sorteio de atletas
-- Sistema de lances
-- Controle de moedas
-- Formação de equipes
+✅ Cadastro de jogadores  
+✅ Sistema de moedas  
+✅ Sorteio de atletas  
+✅ Compra de jogadores  
+✅ Formação dos times  
+✅ Ranking final  
+✅ Exibição do campeão  
 
-## 📂 Versão
+## 🌐 Projeto online
 
-MVP 0.1
+Acesse:
+(seu link do GitHub Pages)
+
+## 📌 Próximos passos
+
+- Melhorar interface
+- Adicionar novos campeonatos
+- Expandir banco de atletas
+- Evoluir para uma aplicação com backend
+
+---
+
+Desenvolvido por Maicon Almeida
