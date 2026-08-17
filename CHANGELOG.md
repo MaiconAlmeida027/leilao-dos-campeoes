@@ -4,98 +4,91 @@ Todas as mudanças importantes do projeto serão registradas neste arquivo.
 
 ---
 
-## [v0.1.0] - Primeira versão pública
+## [v1.1.0] - 2026-08-17
 
-### Funcionalidades iniciais
+### Adicionado
+- **Liga Pernas de Pau (Modo Bagres):** Modo de jogo inverso onde a menor pontuação total vence a partida.
+- **Banco de Reservas de Emergência (`reservas.js`):** Preenchimento automático com atletas folclóricos caso o leilão termine sem posições preenchidas.
+- **Prancheta Tática no Painel de Times:**
+  - Barra de progresso visual do elenco montado (`X/5`).
+  - Badges de status por posição (`Contratado` ou `Disponível`).
+  - Botão de seleção rápida do comprador direto pelo card do jogador.
+- **Rolagem Suave Automática:** Redirecionamento automático da visualização ao confirmar compra ou descartar atleta no mobile.
 
-- Estrutura inicial do jogo criada.
-- Tela de configuração da partida.
-- Escolha do campeonato.
-- Escolha da quantidade de jogadores.
-- Cadastro dos participantes.
-- Sistema inicial de moedas.
-
----
-
-## [v0.2.0] - Sistema de leilão
-
-### Lógica do jogo
-
-- Implementado sorteio de atletas.
-- Criado sistema de lances.
-- Controle de saldo dos jogadores.
-- Registro de compras.
-- Formação inicial dos times.
+### Alterado
+- **Redesign Dark/Gold:** Nova interface esportiva moderna com paleta escura, acabamento em dourado e sombras suaves.
+- **Mecânica de Mistério:** Notas dos atletas ocultadas durante a fase de leilão, sendo reveladas apenas no ranking final.
+- **Modularização de Atletas:** Separação das bases em arquivos dedicados (`brasileirao.js`, `champions.js`, `copa2026.js`, `lendas.js`, `bagres.js`, `reservas.js`).
 
 ---
 
-## [v0.3.0] - Evolução das equipes
+## [v1.0.0] - Primeira Versão Oficial do MVP
 
-### Estrutura dos times
-
-Alteração da formação dos times para:
-
-- 1 Goleiro
-- 1 Zagueiro
-- 2 Meias
-- 1 Atacante
-
-Melhorias:
-
-- Permissão para dois meias por equipe.
-- Validação das posições dos atletas.
-- Controle do limite de jogadores por posição.
+### Adicionado
+- Sistema completo e autônomo de leilão de cartas de futebol.
+- Documentação profissional no `README.md` com badges e guia de arquitetura.
+- Histórico oficial de alterações no `CHANGELOG.md`.
 
 ---
 
-## [v0.4.0] - Sistema completo de partida
-
-### Melhorias implementadas
-
-- Correção da compra de atletas.
-- Busca de jogadores ignorando diferenças de maiúsculas/minúsculas.
-- Correção do desconto de moedas.
-- Remoção automática dos atletas contratados.
-- Atualização do painel dos jogadores em tempo real.
-
-### Final da partida
-
-- Criada tela de resultado final.
-- Implementado cálculo de pontuação.
-- Criado ranking das equipes.
-- Exibição do campeão.
-
----
-
-## [v0.5.0] - Melhorias visuais
+## [v0.5.0] - Melhorias Visuais
 
 ### Interface
-
-- Novo tema inspirado no futebol.
-- Fundo com estilo de gramado.
+- Tema inicial inspirado em gramado de futebol.
 - Reformulação dos cartões dos jogadores.
-- Melhorias nos botões.
-- Organização visual das telas.
-- Responsividade básica.
+- Melhorias na tipografia e nos botões.
+- Responsividade inicial para telas menores.
 
 ---
 
-## Próximas versões
+## [v0.4.0] - Sistema Completo de Partida
 
-### [v1.0.0]
+### Melhorias Implementadas
+- Validação de compras sem distinção de maiúsculas/minúsculas.
+- Desconto dinâmico do saldo de moedas.
+- Remoção automática dos atletas contratados da lista de sorteio.
+- Atualização em tempo real do painel de times.
 
-Planejado:
+### Final de Partida
+- Criação da tela de resultado final.
+- Cálculo automático da pontuação do time.
+- Exibição de ranking e destaque para o campeão.
 
-- Refatoração do JavaScript.
-- Organização final do código.
-- README profissional.
-- Primeira versão oficial do MVP.
+---
 
-### [v1.1.0]
+## [v0.3.0] - Estrutura dos Times
 
-Planejado:
+### Lógica
+- Definição da formação tática: 1 Goleiro, 1 Zagueiro, 2 Meias e 1 Atacante.
+- Validação e bloqueio de posições duplicadas/excedentes.
 
-- Novas ligas.
-- Elenco ampliado de atletas.
-- Melhorias na experiência visual.
-- Novas funcionalidades de jogo.
+---
+
+## [v0.2.0] - Sistema de Leilão
+
+### Lógica
+- Sorteio aleatório de atletas.
+- Sistema de lances e registro de compras.
+- Controle individual de saldo de moedas.
+
+---
+
+## [v0.1.0] - Primeira Versão Pública
+
+### Inicial
+- Estrutura base do projeto (HTML, CSS e JS).
+- Seleção de campeonato e quantidade de jogadores (2 ou 3).
+- Cadastro inicial dos participantes.
+
+---
+
+## Próximas Versões (Roadmap)
+
+### [v1.2.0]
+- Modularização do JavaScript usando ES Modules (`import`/`export`).
+- Animações e efeitos na revelação das cartas.
+- Sons e efeitos sonoros de lances e apito final.
+
+### [v2.0.0]
+- Arquitetura de Back-end com Node.js e Express.
+- Modo Multiplayer em tempo real via WebSockets (Socket.io).
