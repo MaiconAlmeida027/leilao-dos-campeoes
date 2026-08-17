@@ -1,519 +1,106 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
-
 <head>
-
-
-<meta charset="UTF-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-Leilão dos Campeões
-</title>
-
-
-
-<link rel="stylesheet" href="css/style.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leilão dos Campeões</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
-
-
 <body>
-
-
 
 <div class="container">
 
-
-
-<!-- ==================================================
-TELA INICIAL
-================================================== -->
-
-
-<section id="telaInicial">
-
-
-
-<h1>
-🏆 LEILÃO DOS CAMPEÕES
-</h1>
-
-
-<p>
-Monte seu time dos sonhos através de um campeonato de cartas de jogadores.
-</p>
-
-
-
-<hr>
-
-
-
-
-
-<h2>
-🏟️ Campeonato
-</h2>
-
-
-<select id="campeonato">
-
-
-<option value="Brasileirão">
-
-Brasileirão
-
-</option>
-
-
-</select>
-
-
-
-
-
-
-
-
-<h2>
-👥 Quantidade de jogadores
-</h2>
-
-
-
-
-<label>
-
-
-<input
-
-type="radio"
-
-name="jogadores"
-
-id="doisJogadores"
-
-checked>
-
-
-2 jogadores
-
-
-</label>
-
-
-
-<br>
-
-
-
-<label>
-
-
-<input
-
-type="radio"
-
-name="jogadores"
-
-id="tresJogadores">
-
-
-3 jogadores
-
-
-</label>
-
-
-
-
-
-
-
-<h2>
-Jogador 1
-</h2>
-
-
-<input
-
-type="text"
-
-id="nomeJogador1"
-
-placeholder="Digite o nome">
-
-
-
-
-
-
-
-<h2>
-Jogador 2
-</h2>
-
-
-<input
-
-type="text"
-
-id="nomeJogador2"
-
-placeholder="Digite o nome">
-
-
-
-
-
-
-
-<div id="jogador3">
-
-
-
-<h2>
-Jogador 3
-</h2>
-
-
-<input
-
-type="text"
-
-id="nomeJogador3"
-
-placeholder="Digite o nome">
-
+    <!-- ==================================================
+    TELA INICIAL
+    ================================================== -->
+    <section id="telaInicial">
+        <h1>🏆 LEILÃO DOS CAMPEÕES</h1>
+        <p>Monte seu time dos sonhos através de um campeonato de cartas de jogadores.</p>
+        <hr>
+
+        <h2>🏟️ Campeonato</h2>
+        <select id="campeonato">
+            <option value="brasileirao">⚽ Brasileirão</option>
+            <option value="champions">🏆 Liga dos Campeões</option>
+            <option value="copa2026">🌎 Copa do Mundo 2026</option>
+            <option value="lendas">👑 Liga Lendas do Futebol</option>
+            <option value="bagres">🩼 Liga Pernas de Pau (Modo Inverso)</option>
+        </select>
+
+        <h2>👥 Quantidade de jogadores</h2>
+        <label>
+            <input type="radio" name="jogadores" id="doisJogadores" checked> 2 jogadores
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="jogadores" id="tresJogadores"> 3 jogadores
+        </label>
+
+        <h2>Jogador 1</h2>
+        <input type="text" id="nomeJogador1" placeholder="Digite o nome">
+
+        <h2>Jogador 2</h2>
+        <input type="text" id="nomeJogador2" placeholder="Digite o nome">
+
+        <div id="jogador3" style="display: none;">
+            <h2>Jogador 3</h2>
+            <input type="text" id="nomeJogador3" placeholder="Digite o nome">
+        </div>
+
+        <br><br>
+        <button id="iniciarJogo">🚀 INICIAR CAMPEONATO</button>
+    </section>
+
+    <!-- ==================================================
+    TELA DO CAMPEONATO
+    ================================================== -->
+    <section id="telaLeilao" style="display: none;">
+        <h1>⚽ CAMPEONATO EM ANDAMENTO</h1>
+        <hr>
+
+        <h2>👥 Times</h2>
+        <div id="listaJogadores"></div>
+        <hr>
+
+        <h2>🔥 Jogador disponível</h2>
+        <div id="atletaAtual">
+            <h3 id="nomeAtleta">Nome do atleta</h3>
+            <p>Posição: <strong><span id="posicaoAtleta">-</span></strong></p>
+        </div>
+        <hr>
+
+        <h3>📝 Registrar compra</h3>
+        <label>Quem comprou?</label>
+        <input type="text" id="nomeComprador" placeholder="Nome do jogador">
+
+        <br><br>
+        <label>Valor pago:</label>
+        <input type="number" id="valorCompra" placeholder="Quantidade de moedas">
+
+        <br><br>
+        <button id="confirmarCompra">✅ CONFIRMAR COMPRA</button>
+        <button id="ninguem">❌ NINGUÉM QUER</button>
+    </section>
+
+    <!-- ==================================================
+    TELA FINAL
+    ================================================== -->
+    <section id="telaResultado" style="display: none;">
+        <h1>🏆 RESULTADO FINAL</h1>
+        <div id="rankingFinal"></div>
+        <div id="campeaoFinal"></div>
+        <button id="novoCampeonato">🔄 NOVO CAMPEONATO</button>
+    </section>
 
 </div>
 
-
-
-
-
-
-
-<br><br>
-
-
-
-<button id="iniciarJogo">
-
-🚀 INICIAR CAMPEONATO
-
-</button>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ==================================================
-TELA DO CAMPEONATO
-================================================== -->
-
-
-<section id="telaLeilao">
-
-
-
-<h1>
-⚽ CAMPEONATO EM ANDAMENTO
-</h1>
-
-
-
-<hr>
-
-
-
-
-<h2>
-👥 Times
-</h2>
-
-
-
-<div id="listaJogadores">
-
-</div>
-
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h2>
-🔥 Jogador disponível
-</h2>
-
-
-
-<div id="atletaAtual">
-
-
-
-
-
-<h3 id="nomeAtleta">
-
-Nome do atleta
-
-</h3>
-
-
-
-
-<p>
-
-Posição:
-
-<strong>
-
-<span id="posicaoAtleta">
-
--
-
-</span>
-
-</strong>
-
-
-</p>
-
-
-
-
-
-<p>
-
-Nota:
-
-<strong>
-
-<span id="notaAtleta">
-
--
-
-</span>
-
-</strong>
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-
-<h3>
-📝 Registrar compra
-</h3>
-
-
-
-<label>
-
-Quem comprou?
-
-</label>
-
-
-
-<input
-
-type="text"
-
-id="nomeComprador"
-
-placeholder="Nome do jogador">
-
-
-
-
-
-
-
-<br><br>
-
-
-
-
-
-<label>
-
-Valor pago:
-
-</label>
-
-
-
-<input
-
-type="number"
-
-id="valorCompra"
-
-placeholder="Quantidade de moedas">
-
-
-
-
-
-<br><br>
-
-
-
-
-<button id="confirmarCompra">
-
-✅ CONFIRMAR COMPRA
-
-</button>
-
-
-
-
-
-<button id="ninguem">
-
-❌ NINGUÉM QUER
-
-</button>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ==================================================
-TELA FINAL
-================================================== -->
-
-
-<section id="telaResultado">
-
-
-
-<h1>
-
-🏆 RESULTADO FINAL
-
-</h1>
-
-
-
-
-
-
-<div id="rankingFinal">
-
-
-</div>
-
-
-
-
-
-
-
-<div id="campeaoFinal">
-
-
-</div>
-
-
-
-
-
-
-
-<button id="novoCampeonato">
-
-🔄 NOVO CAMPEONATO
-
-</button>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<script src="js/atletas.js"></script>
-
+<script src="js/atletas/bagres.js"></script>
+<script src="js/atletas/brasileirao.js"></script>
+<script src="js/atletas/champions.js"></script>
+<script src="js/atletas/copa2026.js"></script>
+<script src="js/atletas/lendas.js"></script>
+<script src="js/atletas/reservas.js"></script>
 <script src="js/script.js"></script>
 
-
-
 </body>
-
-
-
 </html>

@@ -1,755 +1,331 @@
-/* =====================================
-CONFIGURAÇÃO GERAL
-===================================== */
-
-
-*{
-
-    box-sizing:border-box;
-
+/* ==================================================
+   VARIÁVEIS DE DESIGN & TEMA DARK / GOLD
+================================================== */
+:root {
+    --bg-main: #0b0f17;
+    --bg-container: #131924;
+    --bg-card: #1c2433;
+    --bg-input: #0b0f17;
+    --border-color: #2a364a;
+    --border-highlight: #3b4c68;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-gold: #f59e0b;
+    --accent-gold-hover: #d97706;
+    --accent-green: #10b981;
+    --accent-green-hover: #059669;
+    --accent-red: #ef4444;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.2);
 }
 
-
-
-body{
-
-
-    margin:0;
-
-
-    padding:20px;
-
-
-    min-height:100vh;
-
-
-    font-family:'Arial', sans-serif;
-
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        #0b6623,
-
-        #064d18
-
-    );
-
-
-    color:#222;
-
-
+/* ==================================================
+   CONFIGURAÇÃO GERAL & RESET
+================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-
-
-/* =====================================
-CONTAINER PRINCIPAL
-===================================== */
-
-
-.container{
-
-
-    max-width:550px;
-
-
-    margin:auto;
-
-
-    background:#ffffff;
-
-
-    padding:25px;
-
-
-    border-radius:20px;
-
-
-    box-shadow:
-
-    0 10px 30px rgba(0,0,0,0.4);
-
-
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1e293b, var(--bg-main));
+    color: var(--text-primary);
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-
-
-/* =====================================
-TITULOS
-===================================== */
-
-
-h1{
-
-
-    text-align:center;
-
-
-    color:#075e1b;
-
-
-    font-size:32px;
-
-
+/* ==================================================
+   CONTAINER PRINCIPAL
+================================================== */
+.container {
+    width: 100%;
+    max-width: 580px;
+    background: var(--bg-container);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-subtle);
 }
 
-
-
-h2{
-
-
-    color:#064d18;
-
-
-    border-left:5px solid #1fa63a;
-
-
-    padding-left:10px;
-
-
+/* ==================================================
+   TÍTULOS E TEXTOS
+================================================== */
+h1 {
+    text-align: center;
+    color: var(--accent-gold);
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
 
-
-
-h3{
-
-
-    color:#333;
-
-
+h2 {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 700;
+    border-left: 4px solid var(--accent-gold);
+    padding-left: 10px;
+    margin: 20px 0 10px 0;
 }
 
-
-
-/* =====================================
-STATUS DO PROJETO
-===================================== */
-
-
-.status-projeto{
-
-
-    background:#102820;
-
-
-    color:white;
-
-
-    padding:20px;
-
-
-    border-radius:15px;
-
-
-    margin-bottom:20px;
-
-
+h3 {
+    color: var(--text-primary);
+    font-size: 16px;
 }
 
-
-
-.status-projeto h2{
-
-
-    color:#ffd700;
-
-
-    border:none;
-
-
+p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-
-
-.status-projeto li{
-
-
-    margin:10px 0;
-
-
+#telaInicial p {
+    text-align: center;
 }
 
-
-
-
-
-/* =====================================
-CAMPOS
-===================================== */
-
-
-input,
-select{
-
-
-    width:100%;
-
-
-    padding:12px;
-
-
-    border-radius:10px;
-
-
-    border:2px solid #1b8f35;
-
-
-    font-size:16px;
-
-
-    margin-top:5px;
-
-
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 20px 0;
 }
 
-
+/* ==================================================
+   CAMPOS & FORMULÁRIOS
+================================================== */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: var(--bg-input);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 15px;
+    margin-top: 6px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
 
 input:focus,
-select:focus{
-
-
-    outline:none;
-
-
-    border-color:#ffd700;
-
-
+select:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
 }
 
-
-
-/* =====================================
-RADIO
-===================================== */
-
-
-label{
-
-
-    display:inline-block;
-
-
-    margin:10px;
-
-
-    font-weight:bold;
-
-
+label {
+    display: inline-block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 8px 0;
+    cursor: pointer;
 }
 
-
-
-/* =====================================
-BOTÕES
-===================================== */
-
-
-button{
-
-
-    width:100%;
-
-
-    padding:15px;
-
-
-    margin-top:15px;
-
-
-    border:none;
-
-
-    border-radius:12px;
-
-
-    background:#075e1b;
-
-
-    color:white;
-
-
-    font-size:18px;
-
-
-    font-weight:bold;
-
-
-    cursor:pointer;
-
-
-    transition:.3s;
-
-
+/* ==================================================
+   BOTÕES
+================================================== */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.1s ease, filter 0.2s ease;
 }
 
-
-
-button:hover{
-
-
-    background:#ffd700;
-
-
-    color:#000;
-
-
-    transform:scale(1.03);
-
-
+button:active {
+    transform: scale(0.98);
 }
 
-
-
-
-
-/* =====================================
-TELAS
-===================================== */
-
-
-#telaLeilao{
-
-
-    display:none;
-
-
+#iniciarJogo,
+#novoCampeonato {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+    color: #000;
+    margin-top: 15px;
 }
 
-
-
-#telaResultado{
-
-
-    display:none;
-
-
-    text-align:center;
-
-
+#confirmarCompra {
+    background: var(--accent-green);
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
-
-
-
-
-/* =====================================
-CARD DO ATLETA
-===================================== */
-
-
-#atletaAtual{
-
-
-    background:
-
-
-    linear-gradient(
-
-        135deg,
-
-        #ffffff,
-
-        #eeeeee
-
-    );
-
-
-    border:3px solid #075e1b;
-
-
-    border-radius:20px;
-
-
-    padding:20px;
-
-
-    text-align:center;
-
-
-    margin:20px 0;
-
-
+#confirmarCompra:hover {
+    background: var(--accent-green-hover);
 }
 
-
-
-#nomeAtleta{
-
-
-    font-size:28px;
-
-
-    color:#075e1b;
-
-
+#ninguem {
+    background: transparent;
+    border: 1.5px solid var(--accent-red);
+    color: var(--accent-red);
 }
 
-
-
-/* =====================================
-PAINEL DOS TIMES
-===================================== */
-
-#listaJogadores{
-
-    margin-top:20px;
-
+#ninguem:hover {
+    background: rgba(239, 68, 68, 0.1);
 }
 
-
-.cardTime{
-
-    background: linear-gradient(
-        135deg,
-        #075e1b,
-        #0b6623
-    );
-
-    color:white;
-
-    border-radius:20px;
-
-    padding:20px;
-
-    margin:20px 0;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.35);
-
-    border:3px solid #ffd700;
-
+/* ==================================================
+   TELAS
+================================================== */
+#telaLeilao,
+#telaResultado {
+    display: none;
 }
 
-
-/* Nome do jogador */
-
-.cardTime h3{
-
-    color:#ffd700;
-
-    text-align:center;
-
-    font-size:24px;
-
-    margin-bottom:15px;
-
+/* ==================================================
+   CARD DO ATLETA (DESTAQUE DO LEILÃO)
+================================================== */
+#atletaAtual {
+    background: linear-gradient(145deg, #1e293b, var(--bg-card));
+    border: 2px solid var(--accent-gold);
+    border-radius: var(--radius-md);
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-glow);
+    margin: 15px 0;
 }
 
-
-
-/* Textos do time */
-
-.cardTime p{
-
-    color:white;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    margin:12px 0;
-
+#nomeAtleta {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 6px;
 }
 
-
-
-/* Separador visual */
-
-.cardTime p::first-letter{
-
-    font-size:22px;
-
+#atletaAtual p {
+    color: var(--text-secondary);
+    font-size: 15px;
 }
 
-
-
-/* Valores vazios */
-
-.cardTime span{
-
-    color:#ffd700;
-
+#atletaAtual strong {
+    color: var(--text-primary);
 }
 
-
-
-/* =====================================
-RESULTADO FINAL
-===================================== */
-
-
-.cardResultado{
-
-
-    background:white;
-
-
-    border-radius:20px;
-
-
-    padding:20px;
-
-
-    margin:20px auto;
-
-
-    max-width:450px;
-
-
-    box-shadow:
-
-    0 5px 20px rgba(0,0,0,.3);
-
-
-    border-top:8px solid #075e1b;
-
-
+/* ==================================================
+   PAINEL DOS TIMES
+================================================== */
+#listaJogadores {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-
-
-.cardResultado h2{
-
-
-    color:#075e1b;
-
-
+.cardTime {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-
-.cardResultado p{
-
-
-    font-size:18px;
-
-
+.cardTime h3 {
+    color: var(--accent-gold);
+    font-size: 17px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
 }
 
-
-
-/* =====================================
-CAMPEÃO
-===================================== */
-
-
-.campeao{
-
-
-    background:
-
-
-    linear-gradient(
-
-        135deg,
-
-        #ffd700,
-
-        #ffb700
-
-    );
-
-
-    padding:30px;
-
-
-    border-radius:25px;
-
-
-    margin-top:30px;
-
-
-    box-shadow:
-
-
-    0 0 30px rgba(255,215,0,.8);
-
-
+.cardTime p {
+    color: var(--text-primary);
+    font-size: 14px;
+    margin: 6px 0;
 }
 
-
-
-.campeao h1{
-
-
-    color:#7a4d00;
-
-
+/* ==================================================
+   RESULTADO FINAL & RANKING
+================================================== */
+.cardResultado {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-
-
-.campeao h2{
-
-
-    color:#000;
-
-
-    border:none;
-
-
+.cardResultado h2 {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 0;
+    color: var(--accent-gold);
 }
 
-
-
-/* =====================================
-LINHAS
-===================================== */
-
-
-hr{
-
-
-    border:none;
-
-
-    height:2px;
-
-
-    background:#ddd;
-
-
-    margin:20px 0;
-
-
+.cardResultado h3 {
+    margin: 5px 0 10px 0;
 }
 
+.cardResultado p {
+    color: var(--text-primary);
+    font-size: 14px;
+    margin: 5px 0;
+}
 
+/* Bloco de Destaque do Campeão */
+.campeao {
+    background: linear-gradient(135deg, #78350f, #1e1b4b);
+    border: 2px solid var(--accent-gold);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--shadow-glow);
+    margin: 20px 0;
+}
 
-/* =====================================
-RESPONSIVO CELULAR
-===================================== */
+.campeao h1 {
+    color: var(--accent-gold);
+    font-size: 20px;
+}
 
+.campeao h2 {
+    border: none;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    margin: 8px 0;
+}
 
-@media(max-width:600px){
+.campeao h3 {
+    color: var(--accent-green);
+    font-size: 18px;
+}
 
-
-
-    body{
-
-
-        padding:10px;
-
-
+/* ==================================================
+   RESPONSIVO CELULAR
+================================================== */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
     }
 
-
-
-
-    .container{
-
-
-        padding:15px;
-
-
+    .container {
+        padding: 16px;
+        border-radius: 14px;
     }
 
-
-
-
-    h1{
-
-
-        font-size:26px;
-
-
+    h1 {
+        font-size: 22px;
     }
 
-
-
-}
-
-.cardTime{
-
-    background: linear-gradient(
-        135deg,
-        #0b6623,
-        #064420
-    );
-
-    color:white;
-
-    border-radius:15px;
-
-    padding:20px;
-
-    margin:20px 0;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,0.3);
-
-}
-
-
-
-.cardTime h2{
-
-    text-align:center;
-
-    color:#ffd700;
-
-}
-
-
-
-.cardTime h4{
-
-    border-bottom:1px solid white;
-
-    padding-bottom:5px;
-
-}
-
-
-
-.cardTime p{
-
-    font-size:18px;
-
-}
-
-#telaResultado{
-
-display:none;
-
-text-align:center;
-
-}
-
-
-
-.cardRanking{
-
-background:#0b6623;
-
-color:white;
-
-padding:20px;
-
-margin:15px;
-
-border-radius:15px;
-
-font-size:20px;
-
-}
-
-
-
-#campeaoFinal{
-
-background:#ffd700;
-
-color:#111;
-
-padding:25px;
-
-border-radius:20px;
-
-margin-top:30px;
-
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
 }
