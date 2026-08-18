@@ -1,8 +1,4 @@
-// ==================================================
-// BANCO DE DADOS: CRAQUES DOS ANOS 2000 (NOSTALGIA)
 // js/atletas/nostalgia.js
-// ==================================================
-
 const nostalgia = [
     // 🧤 GOLEIROS (12)
     { nome: "Gianluigi Buffon (Juventus 2006)", posicao: "Goleiro", nota: 96 },
