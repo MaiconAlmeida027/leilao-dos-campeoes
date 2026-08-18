@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leilão dos Campeões</title>
+    <!-- 1. VÍNCULO COM O CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,13 +12,14 @@
 <div class="container">
 
     <!-- ==================================================
-    TELA INICIAL
+    BLOCO 1: TELA INICIAL (Configuração da Partida)
     ================================================== -->
     <section id="telaInicial">
         <h1>🏆 LEILÃO DOS CAMPEÕES</h1>
         <p>Monte seu time dos sonhos através de um campeonato de cartas de jogadores.</p>
         <hr>
 
+        <!-- Seleção da Liga / Campeonato -->
         <h2>🏟️ Campeonato</h2>
         <select id="campeonato">
             <option value="brasileirao">⚽ Brasileirão</option>
@@ -27,6 +29,7 @@
             <option value="bagres">🩼 Liga Pernas de Pau (Modo Inverso)</option>
         </select>
 
+        <!-- Escolha de Quantidade de Participantes -->
         <h2>👥 Quantidade de jogadores</h2>
         <label>
             <input type="radio" name="jogadores" id="doisJogadores" checked> 2 jogadores
@@ -36,12 +39,14 @@
             <input type="radio" name="jogadores" id="tresJogadores"> 3 jogadores
         </label>
 
+        <!-- Inputs de Nomes dos Jogadores -->
         <h2>Jogador 1</h2>
         <input type="text" id="nomeJogador1" placeholder="Digite o nome">
 
         <h2>Jogador 2</h2>
         <input type="text" id="nomeJogador2" placeholder="Digite o nome">
 
+        <!-- Campo Opcional do Jogador 3 (Inicia Oculto) -->
         <div id="jogador3" style="display: none;">
             <h2>Jogador 3</h2>
             <input type="text" id="nomeJogador3" placeholder="Digite o nome">
@@ -52,16 +57,29 @@
     </section>
 
     <!-- ==================================================
-    TELA DO CAMPEONATO
+    BLOCO 2: TELA DO LEILÃO (Partida em Andamento)
     ================================================== -->
     <section id="telaLeilao" style="display: none;">
         <h1>⚽ CAMPEONATO EM ANDAMENTO</h1>
+        
+        <!-- RN-01: Contador de Cartas Restantes no Deck -->
+       <!-- RN-01: Contador Detalhado por Posição -->
+<div class="deck-status">
+    <div class="deck-painel">
+        <div class="deck-titulo">📦 Restantes no leilão: <strong id="totalDeck">0</strong></div>
+        <div class="deck-posicoes" id="contadorDeckPosicoes">
+            <!-- Injetado dinamicamente pelo JS -->
+        </div>
+    </div>
+</div>
         <hr>
 
+        <!-- Painel dos Times (Onde o JS desenha as pranchetas táticas) -->
         <h2>👥 Times</h2>
         <div id="listaJogadores"></div>
         <hr>
 
+        <!-- Carta do Atleta Sorteado na Rodada -->
         <h2>🔥 Jogador disponível</h2>
         <div id="atletaAtual">
             <h3 id="nomeAtleta">Nome do atleta</h3>
@@ -69,6 +87,7 @@
         </div>
         <hr>
 
+        <!-- Formulário de Lance / Compra -->
         <h3>📝 Registrar compra</h3>
         <label>Quem comprou?</label>
         <input type="text" id="nomeComprador" placeholder="Nome do jogador">
@@ -83,23 +102,36 @@
     </section>
 
     <!-- ==================================================
-    TELA FINAL
+    BLOCO 3: TELA DE RESULTADO (Pódio e Estatísticas)
     ================================================== -->
     <section id="telaResultado" style="display: none;">
         <h1>🏆 RESULTADO FINAL</h1>
+        
+        <!-- Áreas onde o JS injeta o ranking e o campeão -->
         <div id="rankingFinal"></div>
         <div id="campeaoFinal"></div>
+        
         <button id="novoCampeonato">🔄 NOVO CAMPEONATO</button>
     </section>
 
 </div>
 
+
+<!-- 1º Bases de Dados de Atletas -->
 <script src="js/atletas/bagres.js"></script>
 <script src="js/atletas/brasileirao.js"></script>
 <script src="js/atletas/champions.js"></script>
 <script src="js/atletas/copa2026.js"></script>
 <script src="js/atletas/lendas.js"></script>
 <script src="js/atletas/reservas.js"></script>
+
+<!-- 2º Módulos de Lógica e Domínio -->
+<script src="js/modulos/estado.js"></script>
+<script src="js/modulos/deck.js"></script>
+<script src="js/modulos/ui.js"></script>
+<script src="js/modulos/pontuacao.js"></script>
+
+<!-- 3º Controlador Principal de Eventos -->
 <script src="js/script.js"></script>
 
 </body>
