@@ -1,79 +1,77 @@
-﻿# ⚽ Leilão dos Campeões
+﻿# 🏆 Leilão dos Campeões
 
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-success?style=for-the-badge&logo=github)](https://maiconalmeida027.github.io/leilao-dos-campeoes/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-success?style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-222222?style=for-the-badge&logo=github)
 
-> Jogo interativo de estratégia e leilão de cartas de futebol desenvolvido para consolidar lógica de programação, manipulação do DOM e desenvolvimento web responsivo.
+> Um jogo tático e estratégico para navegador onde os participantes disputam cartas de jogadores em um leilão dinâmico para montar a equipe titular dos sonhos (ou dos bagres).
 
----
-
-## 🎯 Sobre o Projeto
-
-O **Leilão dos Campeões** coloca 2 ou 3 participantes para disputar cartas de atletas em um sistema de lances com saldo limitado de moedas. O objetivo é gerenciar o orçamento e preencher todas as posições táticas (Goleiro, Zagueiro, 2 Meias e Atacante) para alcançar a maior pontuação — ou a menor, caso você encare o desafio da Liga Bagres!
-
-🌐 **Jogue agora:** [https://maiconalmeida027.github.io/leilao-dos-campeoes/](https://maiconalmeida027.github.io/leilao-dos-campeoes/)
+🔗 **Acesse o jogo online:** [Leilão dos Campeões no GitHub Pages](https://maiconalmeida027.github.io/leilao-dos-campeoes/)
 
 ---
 
-## 🕹️ Funcionalidades (MVP 1.1)
+## 🎮 Sobre o Jogo
 
-- 👥 **Controle de Participantes:** Suporte para 2 ou 3 jogadores com validação de nomes únicos.
-- 🏟️ **Múltiplos Campeonatos:**
-  - ⚽ Brasileirão
-  - 🏆 Liga dos Campeões
-  - 🌎 Copa do Mundo 2026
-  - 👑 Liga Lendas do Futebol
-  - 🩼 **Liga Pernas de Pau (Modo Inverso):** Vitória concedida ao time de pior pontuação total.
-- 🃏 **Sistema de Leilão com Mistério:** As notas dos atletas ficam ocultas durante os lances e são reveladas apenas no apito final.
-- 📋 **Prancheta Tática & UI:** 
-  - Visual moderno no estilo Dark/Gold inspirado em cards de futebol.
-  - Barra de progresso do elenco montado (ex: `3/5`).
-  - Badges com status de cada posição (`Contratado` ou `Disponível`).
-  - Botão de seleção rápida do comprador direto pelo card.
-  - Rolagem suave automática ao registrar lances no mobile.
-- 🚑 **Banco de Reservas de Emergência:** Preenchimento automático com atletas folclóricos caso os sorteios acabem sem completar o elenco.
-- 🏆 **Ranking & Pódio Final:** Cálculo seguro das notas e tela de celebração do campeão.
+O **Leilão dos Campeões** coloca 2 ou 3 jogadores frente a frente em uma disputa acirrada de lances e estratégia financeira. Cada participante administra um saldo limitado de moedas e precisa preencher as 5 posições obrigatórias do esquema tático antes que o deck do leilão se esgote.
+
+### 🌟 Principais Destaques
+- **6 Ligas Disponíveis:** Brasileirão, Liga dos Campeões, Copa do Mundo 2026, Lendas do Futebol, Nostalgia Anos 2000 e a cômica Liga Pernas de Pau (Bagres).
+- **Deck Tático Balanceado:** Toda partida conta com exatamente **20 cartas** sorteadas por proporção fixa (**4 Goleiros, 4 Zagueiros, 8 Meias e 4 Atacantes**).
+- **Modo Inverso (Bagres):** Na liga de pernas de pau, a regra se inverte: o grande vencedor é aquele que terminar com a **menor** pontuação média.
+- **Banco de Emergência:** Caso o leilão acabe e algum time fique incompleto, cartas de reposição com nota neutra são atribuídas automaticamente.
+
+---
+
+## 📊 Regras de Negócio e Mecânicas
+
+| Regra | Descrição |
+|---|---|
+| **Formação Tática** | 1 Goleiro 🧤, 1 Zagueiro 🛡️, 2 Meias 🎯 e 1 Atacante ⚽ (5 titulares). |
+| **Economia** | Cada jogador inicia com **20 moedas**. O lance máximo por carta é de 20 moedas. |
+| **Pontuação Final** | **Média das notas dos 5 titulares** + **1 ponto extra para cada 5 moedas restantes**. |
+| **Rejeição** | Cartas descartadas pelo botão "Ninguém Quer" são removidas permanentemente do campeonato. |
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5:** Estrutura semântica por seções.
-- **CSS3:** Variáveis CSS (`:root`), Flexbox, CSS Grid e design responsivo (Mobile-first).
-- **JavaScript (Vanilla ES6+):** Manipulação dinâmica do DOM, controle de fluxo de estados, métodos de array (`filter`, `map`, `every`, `sort`, `shift`) e spread operator.
-- **Git & GitHub:** Versionamento contínuo e deploy automatizado via GitHub Pages.
+- **HTML5:** Estruturação semântica em fluxo Single Page Application (SPA).
+- **CSS3:** Pranchetas táticas, temas visuais, badges de posição e responsividade mobile.
+- **JavaScript Moderno (ES6+):** Arquitetura modular de estado, manipulação de arrays e algoritmo de embaralhamento não-viesado (*Fisher-Yates*).
+- **Git & GitHub:** Versionamento com commits convencionais e deploy automatizado via GitHub Pages.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```text
 leilao-dos-campeoes/
 ├── css/
-│   └── style.css            # Estilização completa e responsiva (Tema Dark/Gold)
+│   └── style.css            # Estilização visual e responsividade
+├── docs/
+│   └── REQUISITOS.md        # Documentação técnica e regras de negócio
 ├── js/
-│   ├── atletas/
-│   │   ├── bagres.js        # Elenco do modo inverso
-│   │   ├── brasileirao.js   # Elenco do Campeonato Brasileiro
-│   │   ├── champions.js     # Elenco da Champions League
-│   │   ├── copa2026.js      # Elenco da Copa do Mundo
-│   │   ├── lendas.js        # Elenco das Lendas
-│   │   └── reservas.js      # Banco de reservas para emergências
-│   └── script.js            # Lógica do jogo e manipulação do DOM
-├── CHANGELOG.md             # Histórico de versões e marcos
-├── index.html               # Estrutura principal da aplicação
-└── README.md                # Documentação do projeto
+│   ├── atletas/             # Bancos de dados de atletas (56 cartas por liga)
+│   │   ├── bagres.js
+│   │   ├── brasileirao.js
+│   │   ├── champions.js
+│   │   ├── copa2026.js
+│   │   ├── lendas.js
+│   │   ├── nostalgia.js
+│   │   └── reservas.js
+│   ├── modulos/             # Módulos com separação de responsabilidades
+│   │   ├── estado.js        # Estado global e fábrica de jogadores
+│   │   ├── deck.js          # Sorteio e manipulação de cartas
+│   │   ├── ui.js            # Renderização de pranchetas e status
+│   │   └── pontuacao.js     # Validações de fim de jogo e ranking
+│   └── script.js            # Controlador principal e eventos DOM
+├── index.html               # Ponto de entrada da aplicação
+└── README.md                # Apresentação do repositório
 
-📌 Próximos Passos (Roadmap)
-[ ] Modularização do JavaScript (ES Modules).
-
-[ ] Transições e efeitos visuais animados na revelação das cartas.
-
-[ ] Criação de Back-end com Node.js e Express.
-
-[ ] Implementação de partidas multiplayer em tempo real com WebSockets (Socket.io).
 
 👨‍💻 Autor
 Desenvolvido por Maicon Almeida
+
+GitHub: @MaiconAlmeida027
