@@ -21,14 +21,14 @@
 
         <!-- Seleção da Liga / Campeonato -->
         <h2>🏟️ Campeonato</h2>
-       <select id="campeonato">
-    <option value="brasileirao">Brasileirão</option>
-    <option value="champions">Liga dos Campeões</option>
-    <option value="copa2026">Copa do Mundo 2026</option>
-    <option value="lendas">Lendas do Futebol</option>
-    <option value="nostalgia">⏳ Nostalgia Anos 2000</option>
-    <option value="bagres">Liga Pernas de Pau (Inverso)</option>
-</select>
+        <select id="campeonato">
+            <option value="brasileirao">Brasileirão</option>
+            <option value="champions">Liga dos Campeões</option>
+            <option value="copa2026">Copa do Mundo 2026</option>
+            <option value="lendas">Lendas do Futebol</option>
+            <option value="nostalgia">Nostalgia Anos 2000</option>
+            <option value="bagres">Liga Pernas de Pau (Inverso)</option>
+        </select>
 
         <!-- Escolha de Quantidade de Participantes -->
         <h2>👥 Quantidade de jogadores</h2>
@@ -63,16 +63,15 @@
     <section id="telaLeilao" style="display: none;">
         <h1>⚽ CAMPEONATO EM ANDAMENTO</h1>
         
-        <!-- RN-01: Contador de Cartas Restantes no Deck -->
-       <!-- RN-01: Contador Detalhado por Posição -->
-<div class="deck-status">
-    <div class="deck-painel">
-        <div class="deck-titulo">📦 Restantes no leilão: <strong id="totalDeck">0</strong></div>
-        <div class="deck-posicoes" id="contadorDeckPosicoes">
-            <!-- Injetado dinamicamente pelo JS -->
+        <!-- RN-01: Contador Detalhado por Posição -->
+        <div class="deck-status">
+            <div class="deck-painel">
+                <div class="deck-titulo">📦 Restantes no leilão: <strong id="totalDeck">0</strong></div>
+                <div class="deck-posicoes" id="contadorDeckPosicoes">
+                    <!-- Injetado dinamicamente pelo JS -->
+                </div>
+            </div>
         </div>
-    </div>
-</div>
         <hr>
 
         <!-- Painel dos Times (Onde o JS desenha as pranchetas táticas) -->
@@ -117,24 +116,23 @@
 
 </div>
 
-
 <!-- 1º Bases de Dados de Atletas -->
-<script src="js/atletas/bagres.js?v=1.2"></script>
-<script src="js/atletas/brasileirao.js?v=1.2"></script>
-<script src="js/atletas/champions.js?v=1.2"></script>
-<script src="js/atletas/copa2026.js?v=1.2"></script>
-<script src="js/atletas/lendas.js?v=1.2"></script>
-<script src="js/atletas/nostalgia.js?v=1.2"></script>
-<script src="js/atletas/reservas.js?v=1.2"></script>
+<script src="js/atletas/bagres.js?v=1.4"></script>
+<script src="js/atletas/brasileirao.js?v=1.4"></script>
+<script src="js/atletas/champions.js?v=1.4"></script>
+<script src="js/atletas/copa2026.js?v=1.4"></script>
+<script src="js/atletas/lendas.js?v=1.4"></script>
+<script src="js/atletas/nostalgia.js?v=1.4"></script>
+<script src="js/atletas/reservas.js?v=1.4"></script>
 
 <!-- 2º Módulos -->
-<script src="js/modulos/estado.js?v=1.2"></script>
-<script src="js/modulos/deck.js?v=1.2"></script>
-<script src="js/modulos/ui.js?v=1.2"></script>
-<script src="js/modulos/pontuacao.js?v=1.2"></script>
+<script src="js/modulos/estado.js?v=1.4"></script>
+<script src="js/modulos/deck.js?v=1.4"></script>
+<script src="js/modulos/ui.js?v=1.4"></script>
+<script src="js/modulos/pontuacao.js?v=1.4"></script>
 
 <!-- 3º Controlador Principal -->
-<script src="js/script.js?v=1.2"></script>
+<script src="js/script.js?v=1.4"></script>
 
 </body>
 </html>

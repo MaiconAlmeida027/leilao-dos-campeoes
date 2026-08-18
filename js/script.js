@@ -60,8 +60,15 @@ botaoIniciar.addEventListener("click", function(){
 
     ligaSelecionada = document.getElementById("campeonato").value;
 
+    const baseLiga = bancos[ligaSelecionada];
+    if (!baseLiga || !Array.isArray(baseLiga)) {
+        alert("Erro: Liga selecionada não foi carregada corretamente.");
+        console.error("Liga inválida:", ligaSelecionada, "Bancos:", bancos);
+        return;
+    }
+
     // Embaralha todo o banco da liga (Fisher-Yates) e seleciona 20 atletas
-    let deckCompleto = [...bancos[ligaSelecionada]];
+    let deckCompleto = [...baseLiga];
     for (let i = deckCompleto.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [deckCompleto[i], deckCompleto[j]] = [deckCompleto[j], deckCompleto[i]];
