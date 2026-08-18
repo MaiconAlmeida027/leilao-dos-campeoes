@@ -5,6 +5,7 @@ const bancos = {
     champions: champions,
     copa2026: copa2026,
     lendas: lendas,
+    nostalgia: nostalgia,
     bagres: bagres
 };
 

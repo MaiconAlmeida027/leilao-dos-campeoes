@@ -59,7 +59,14 @@ botaoIniciar.addEventListener("click", function(){
     }
 
     ligaSelecionada = document.getElementById("campeonato").value;
-    atletasDisponiveis = [...bancos[ligaSelecionada]];
+
+    // Embaralha todo o banco da liga (Fisher-Yates) e seleciona 20 atletas
+    let deckCompleto = [...bancos[ligaSelecionada]];
+    for (let i = deckCompleto.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [deckCompleto[i], deckCompleto[j]] = [deckCompleto[j], deckCompleto[i]];
+    }
+    atletasDisponiveis = deckCompleto.slice(0, 20);
 
     telaInicial.style.display = "none";
     telaLeilao.style.display = "block";

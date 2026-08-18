@@ -1,0 +1,70 @@
+// ==================================================
+// BANCO DE DADOS: CRAQUES DOS ANOS 2000 (NOSTALGIA)
+// js/atletas/nostalgia.js
+// ==================================================
+
+const nostalgia = [
+    // 🧤 GOLEIROS (12)
+    { nome: "Gianluigi Buffon (Juventus 2006)", posicao: "Goleiro", nota: 96 },
+    { nome: "Iker Casillas (Real Madrid 2008)", posicao: "Goleiro", nota: 95 },
+    { nome: "Petr Čech (Chelsea 2005)", posicao: "Goleiro", nota: 94 },
+    { nome: "Dida (Milan 2003)", posicao: "Goleiro", nota: 93 },
+    { nome: "Oliver Kahn (Bayern 2001)", posicao: "Goleiro", nota: 94 },
+    { nome: "Rogério Ceni (São Paulo 2005)", posicao: "Goleiro", nota: 92 },
+    { nome: "Marcos (Palmeiras 2002)", posicao: "Goleiro", nota: 91 },
+    { nome: "Júlio César (Inter de Milão 2010)", posicao: "Goleiro", nota: 93 },
+    { nome: "Edwin van der Sar (Manchester United 2008)", posicao: "Goleiro", nota: 92 },
+    { nome: "Victor Valdés (Barcelona 2009)", posicao: "Goleiro", nota: 89 },
+    { nome: "Fabián Barthez (França 2000)", posicao: "Goleiro", nota: 88 },
+    { nome: "Jens Lehmann (Arsenal Invincibles 2004)", posicao: "Goleiro", nota: 88 },
+
+    // 🛡️ ZAGUEIROS (12)
+    { nome: "Paolo Maldini (Milan 2003)", posicao: "Zagueiro", nota: 97 },
+    { nome: "Alessandro Nesta (Milan 2005)", posicao: "Zagueiro", nota: 95 },
+    { nome: "Fabio Cannavaro (Itália 2006)", posicao: "Zagueiro", nota: 96 },
+    { nome: "Carles Puyol (Barcelona 2009)", posicao: "Zagueiro", nota: 94 },
+    { nome: "Rio Ferdinand (Manchester United 2008)", posicao: "Zagueiro", nota: 93 },
+    { nome: "John Terry (Chelsea 2005)", posicao: "Zagueiro", nota: 93 },
+    { nome: "Nemanja Vidić (Manchester United 2009)", posicao: "Zagueiro", nota: 92 },
+    { nome: "Lúcio (Inter de Milão 2010)", posicao: "Zagueiro", nota: 92 },
+    { nome: "Roberto Carlos (Real Madrid 2002)", posicao: "Zagueiro", nota: 94 },
+    { nome: "Cafu (Milan 2005)", posicao: "Zagueiro", nota: 93 },
+    { nome: "Jaap Stam (Milan 2005)", posicao: "Zagueiro", nota: 90 },
+    { nome: "Lugano (São Paulo 2005)", posicao: "Zagueiro", nota: 89 },
+
+    // 🎯 MEIAS (20)
+    { nome: "Zinedine Zidane (Real Madrid 2002)", posicao: "Meia", nota: 98 },
+    { nome: "Ronaldinho Gaúcho (Barcelona 2005)", posicao: "Meia", nota: 98 },
+    { nome: "Kaká (Milan 2007)", posicao: "Meia", nota: 97 },
+    { nome: "Andrés Iniesta (Barcelona 2009)", posicao: "Meia", nota: 95 },
+    { nome: "Xavi Hernández (Barcelona 2009)", posicao: "Meia", nota: 95 },
+    { nome: "Andrea Pirlo (Milan 2006)", posicao: "Meia", nota: 94 },
+    { nome: "Steven Gerrard (Liverpool 2005)", posicao: "Meia", nota: 94 },
+    { nome: "Frank Lampard (Chelsea 2005)", posicao: "Meia", nota: 93 },
+    { nome: "Paul Scholes (Manchester United 2008)", posicao: "Meia", nota: 93 },
+    { nome: "Clarence Seedorf (Milan 2007)", posicao: "Meia", nota: 92 },
+    { nome: "Patrick Vieira (Arsenal Invincibles 2004)", posicao: "Meia", nota: 93 },
+    { nome: "Pavel Nedvěd (Juventus 2003)", posicao: "Meia", nota: 93 },
+    { nome: "Michael Ballack (Chelsea/Bayern 2006)", posicao: "Meia", nota: 91 },
+    { nome: "Deco (Porto/Barcelona 2004)", posicao: "Meia", nota: 91 },
+    { nome: "Juan Román Riquelme (Boca Juniors 2007)", posicao: "Meia", nota: 93 },
+    { nome: "Alex Cabeção (Cruzeiro/Fenerbahçe 2003)", posicao: "Meia", nota: 91 },
+    { nome: "Juninho Pernambucano (Lyon 2006)", posicao: "Meia", nota: 92 },
+    { nome: "Claude Makélélé (Chelsea 2005)", posicao: "Meia", nota: 91 },
+    { nome: "Gennaro Gattuso (Milan 2007)", posicao: "Meia", nota: 90 },
+    { nome: "Dejan Stanković (Inter de Milão 2010)", posicao: "Meia", nota: 89 },
+
+    // ⚽ ATACANTES (12)
+    { nome: "Ronaldo Fenômeno (Real Madrid 2002)", posicao: "Atacante", nota: 98 },
+    { nome: "Thierry Henry (Arsenal 2004)", posicao: "Atacante", nota: 97 },
+    { nome: "Adriano Imperador (Inter de Milão 2005)", posicao: "Atacante", nota: 96 },
+    { nome: "Andriy Shevchenko (Milan 2004)", posicao: "Atacante", nota: 95 },
+    { nome: "Samuel Eto'o (Barcelona 2006)", posicao: "Atacante", nota: 94 },
+    { nome: "Didier Drogba (Chelsea 2007)", posicao: "Atacante", nota: 94 },
+    { nome: "Ruud van Nistelrooy (Man United 2003)", posicao: "Atacante", nota: 93 },
+    { nome: "Wayne Rooney (Man United 2008)", posicao: "Atacante", nota: 94 },
+    { nome: "Raúl González (Real Madrid 2001)", posicao: "Atacante", nota: 93 },
+    { nome: "Hernán Crespo (Chelsea/Inter 2005)", posicao: "Atacante", nota: 91 },
+    { nome: "Diego Forlán (Atlético de Madrid 2010)", posicao: "Atacante", nota: 92 },
+    { nome: "Fred (Fluminense/Lyon 2006)", posicao: "Atacante", nota: 88 }
+];
