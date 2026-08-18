@@ -16,6 +16,26 @@ tresJogadores.addEventListener("click", function(){
     jogador3.style.display = "block";
 });
 
+// Nomes amigáveis para exibição no cabeçalho
+const nomesLigas = {
+    brasileirao: "BRASILEIRÃO",
+    champions: "LIGA DOS CAMPEÕES",
+    copa2026: "COPA DO MUNDO 2026",
+    lendas: "LENDAS DO FUTEBOL",
+    nostalgia: "NOSTALGIA ANOS 2000",
+    bagres: "LIGA PERNAS DE PAU"
+};
+
+// Função auxiliar para embaralhar qualquer array (Fisher-Yates)
+function embaralharArray(lista) {
+    let copia = [...lista];
+    for (let i = copia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+    return copia;
+}
+
 // Iniciar Campeonato
 const botaoIniciar = document.getElementById("iniciarJogo");
 
@@ -67,13 +87,33 @@ botaoIniciar.addEventListener("click", function(){
         return;
     }
 
-    // Embaralha todo o banco da liga (Fisher-Yates) e seleciona 20 atletas
-    let deckCompleto = [...baseLiga];
-    for (let i = deckCompleto.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [deckCompleto[i], deckCompleto[j]] = [deckCompleto[j], deckCompleto[i]];
+    // Atualiza o título dinâmico da tela do leilão
+    const tituloLigaAtiva = document.getElementById("tituloLigaAtiva");
+    if (tituloLigaAtiva) {
+        tituloLigaAtiva.innerText = nomesLigas[ligaSelecionada] || "CAMPEONATO";
     }
-    atletasDisponiveis = deckCompleto.slice(0, 20);
+
+    // 1. Separa o banco por posições
+    const goleiros = baseLiga.filter(a => a.posicao.toLowerCase() === "goleiro");
+    const zagueiros = baseLiga.filter(a => a.posicao.toLowerCase() === "zagueiro");
+    const meias = baseLiga.filter(a => a.posicao.toLowerCase() === "meia");
+    const atacantes = baseLiga.filter(a => a.posicao.toLowerCase() === "atacante");
+
+    // 2. Embaralha cada posição e pega a cota exata (4 Goleiros, 4 Zagueiros, 8 Meias, 4 Atacantes)
+    const deckGoleiros = embaralharArray(goleiros).slice(0, 4);
+    const deckZagueiros = embaralharArray(zagueiros).slice(0, 4);
+    const deckMeias = embaralharArray(meias).slice(0, 8);
+    const deckAtacantes = embaralharArray(atacantes).slice(0, 4);
+
+    // 3. Junta as 20 cartas e embaralha a ordem final do leilão
+    const deckFinal20 = [
+        ...deckGoleiros,
+        ...deckZagueiros,
+        ...deckMeias,
+        ...deckAtacantes
+    ];
+
+    atletasDisponiveis = embaralharArray(deckFinal20);
 
     telaInicial.style.display = "none";
     telaLeilao.style.display = "block";
