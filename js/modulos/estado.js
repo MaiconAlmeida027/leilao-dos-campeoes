@@ -16,19 +16,19 @@ let atletaAtual = null;
 
 // Mapeamento dos Bancos de Dados
 const bancos = {
-    brasileirao: brasileirao,
-    champions: champions,
-    copa2026: copa2026,
-    lendas: lendas,
-    nostalgia: nostalgia,
-    bagres: bagres
+    brasileirao: typeof brasileirao !== "undefined" ? brasileirao : [],
+    champions: typeof champions !== "undefined" ? champions : [],
+    copa2026: typeof copa2026 !== "undefined" ? copa2026 : [],
+    lendas: typeof lendas !== "undefined" ? lendas : [],
+    nostalgia: typeof nostalgia !== "undefined" ? nostalgia : [],
+    bagres: typeof bagres !== "undefined" ? bagres : []
 };
 
-// Fábrica de Objeto Jogador (Estrutura Tática 1-1-2-1)
+// Fábrica de Objeto Jogador (Saldo Inicial: 20 moedas)
 function criarJogador(nome){
     return {
         nome: nome,
-        saldo: 100,
+        saldo: 20, // 👈 Definido em exatamente 20 moedas
         time: {
             goleiro: null,
             zagueiro: null,
