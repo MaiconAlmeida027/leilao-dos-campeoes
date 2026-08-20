@@ -21,6 +21,7 @@ const bancos = {
     copa2026: typeof copa2026 !== "undefined" ? copa2026 : [],
     lendas: typeof lendas !== "undefined" ? lendas : [],
     nostalgia: typeof nostalgia !== "undefined" ? nostalgia : [],
+    premier_league: typeof premier_league !== "undefined" ? premier_league : [],
     bagres: typeof bagres !== "undefined" ? bagres : []
 };
 

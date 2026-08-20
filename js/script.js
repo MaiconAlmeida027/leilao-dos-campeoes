@@ -23,6 +23,7 @@ const nomesLigas = {
     copa2026: "COPA DO MUNDO 2026",
     lendas: "LENDAS DO FUTEBOL",
     nostalgia: "NOSTALGIA ANOS 2000",
+    premier_league: "PREMIER LEAGUE",
     bagres: "LIGA PERNAS DE PAU"
 };
 
