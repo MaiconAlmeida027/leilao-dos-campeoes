@@ -8,7 +8,7 @@
 
 > Um jogo tático e estratégico para navegador onde os participantes disputam cartas de jogadores em um leilão dinâmico para montar a equipe titular dos sonhos (ou dos bagres).
 
-🔗 **Acesse o jogo online:** [Leilão dos Campeões no GitHub Pages](https://maiconalmeida027.github.io/leilao-dos-campeoes/)
+🔗 **Acesse o jogo online:** [Leilão dos Campeões no GitHub Pages](https://maiconagit add docs/REQUISITOS.md README.mdlmeida027.github.io/leilao-dos-campeoes/)
 
 ---
 
