@@ -1,4 +1,7 @@
+// ==================================================
+// LEILÃO DOS CAMPEÕES - PONTUAÇÃO E RESULTADOS
 // js/modulos/pontuacao.js
+// ==================================================
 
 function calcularPontuacao(jogador){
     let pontos = 0;
@@ -23,10 +26,10 @@ function obterMelhorNotaAtleta(jogador){
 
 function completarTimesComReservas(){
     const reservasDisponiveis = {
-        goleiro: [...bancoReservas.goleiro],
-        zagueiro: [...bancoReservas.zagueiro],
-        meia: [...bancoReservas.meia],
-        atacante: [...bancoReservas.atacante]
+        goleiro: typeof bancoReservas !== "undefined" ? [...bancoReservas.goleiro] : [],
+        zagueiro: typeof bancoReservas !== "undefined" ? [...bancoReservas.zagueiro] : [],
+        meia: typeof bancoReservas !== "undefined" ? [...bancoReservas.meia] : [],
+        atacante: typeof bancoReservas !== "undefined" ? [...bancoReservas.atacante] : []
     };
 
     jogadores.forEach(function(jogador){
@@ -56,7 +59,8 @@ function verificarFimDeJogo(){
         );
     });
 
-    if(completo){
+    // Encerra se todos completaram o time ou se acabaram as cartas do leilão
+    if(completo || atletasDisponiveis.length === 0){
         finalizarJogo();
         return true;
     }
@@ -111,6 +115,23 @@ function mostrarResultado(){
 
         const jogador = item.jogador;
 
+        // Formatação com as notas individuais
+        const textoGoleiro = jogador.time.goleiro 
+            ? `${jogador.time.goleiro.nome} (<strong>${jogador.time.goleiro.nota} pts</strong>)` 
+            : "Sem goleiro";
+
+        const textoZagueiro = jogador.time.zagueiro 
+            ? `${jogador.time.zagueiro.nome} (<strong>${jogador.time.zagueiro.nota} pts</strong>)` 
+            : "Sem zagueiro";
+
+        const textoMeias = jogador.time.meias.length > 0 
+            ? jogador.time.meias.map(m => `${m.nome} (<strong>${m.nota} pts</strong>)`).join(" - ") 
+            : "Sem meias";
+
+        const textoAtacante = jogador.time.atacante 
+            ? `${jogador.time.atacante.nome} (<strong>${jogador.time.atacante.nota} pts</strong>)` 
+            : "Sem atacante";
+
         div.innerHTML = `
             <h2>${colocacao}</h2>
             <h3>👤 ${jogador.nome} FC</h3>
@@ -118,14 +139,10 @@ function mostrarResultado(){
             <p>💰 Moedas restantes: ${jogador.saldo}</p>
             <p class="desempate-detalhe">🌟 Melhor carta individual: ${item.melhorNota} pts (critério de desempate)</p>
             <hr>
-            <p>🧤 Goleiro: ${jogador.time.goleiro ? jogador.time.goleiro.nome : "Sem goleiro"}</p>
-            <p>🛡️ Zagueiro: ${jogador.time.zagueiro ? jogador.time.zagueiro.nome : "Sem zagueiro"}</p>
-            <p>🎯 Meias: ${
-                jogador.time.meias.length > 0 
-                    ? jogador.time.meias.map(m => m.nome).join(" - ") 
-                    : "Sem meias"
-            }</p>
-            <p>⚽ Atacante: ${jogador.time.atacante ? jogador.time.atacante.nome : "Sem atacante"}</p>
+            <p>🧤 Goleiro: ${textoGoleiro}</p>
+            <p>🛡️ Zagueiro: ${textoZagueiro}</p>
+            <p>🎯 Meias: ${textoMeias}</p>
+            <p>⚽ Atacante: ${textoAtacante}</p>
         `;
 
         rankingFinal.appendChild(div);
